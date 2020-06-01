@@ -18,7 +18,7 @@ hugo server -t ../..
 
 Hugo (>= **0.60.1**) is required.
 
-## config settings
+## Config settings
 
 example
 
