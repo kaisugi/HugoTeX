@@ -1,0 +1,27 @@
+footer .theme-by {
+  text-align: center;
+  margin: 100px 0 0;
+}
+
+.pager {
+  list-style: none;
+  text-align: center;
+  margin: 20px 0 0;
+  padding-left: 0;
+}
+
+.pager ul {
+  display: block;
+}
+
+.pager .previous > a {
+  margin: 20px 0 0;
+  float: left;
+  display: block;
+}
+
+.pager .next > a {
+  margin: 20px 0 0;
+  float: right;
+  display: block;
+}

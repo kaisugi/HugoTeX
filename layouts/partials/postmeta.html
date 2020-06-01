@@ -1,0 +1,9 @@
+<span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}
+  {{ if .Params.categories }}
+    <br><i class="fa fa-folder-open"></i>
+    {{ range .Params.categories }}
+      <a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+    {{ end }}
+  {{ end }}
+</span>

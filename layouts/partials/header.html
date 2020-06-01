@@ -1,0 +1,42 @@
+
+{{ if .IsHome }}
+{{ if .Site.Params.homeTitle }}
+  {{ $.Scratch.Set "title" .Site.Params.homeTitle }}
+{{ else }}
+  {{ $.Scratch.Set "title" .Site.Title }}
+{{ end }}
+{{ else }}
+{{ $.Scratch.Set "title" .Title }}
+{{ end }}
+
+{{ $title := $.Scratch.Get "title" }}
+{{ if $title }}
+<header>
+  {{ partial "nav.html" . }}
+  <div class="intro-header">
+    <div class="container">
+      <div class="{{ .Type }}-heading">
+        {{ if eq .Type "list" }}
+          <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
+        {{ else }}
+          <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
+          {{ if .IsHome }}
+            <p class="author">{{ with .Site.Author.name }}{{.}}{{ else }}<br/>{{ end }}</p>
+
+            {{ if .Site.Author.abstract }}
+              <div class="abstract">
+                <h5>Abstract</h5>
+                <p>
+                  {{ .Site.Author.abstract }}
+                </p>
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</header>
+{{ else }}
+<div class="intro-header"></div>
+{{ end }}

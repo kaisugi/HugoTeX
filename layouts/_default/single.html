@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        {{ partial "postmeta.html" . }}
+      </div>
+      <br>
+      {{ partial "toc.html" . }}
+
+      {{ if .Params.tags }}
+        <div class="blog-tags">
+          {{ range .Params.tags }}
+            <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+          {{ end }}
+        </div>
+      {{ end }}
+    </article>
+    {{ if and (gt .WordCount 400) (.Param "backtotop") }}
+      {{ partial "backtotop.html" . }}
+      <button onclick="topFunction()" id="backtotopButton">
+        <i class="fa fa-angle-up"></i>
+      </button>
+    {{ end }}
+  </div>
+{{ end }}
