@@ -3,6 +3,8 @@ title = "HugoTeX"
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
 
 [author]
   name = "Kaito Sugimoto"
