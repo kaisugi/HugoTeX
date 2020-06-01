@@ -2,9 +2,11 @@
 
 A hugo theme which looks like a LaTeX document.
 
-![screenshot](images/screenshot.png)
+![screenshot](images/tn.png)
 
 **Live Demo: https://hugotex.netlify.app/**
+
+This theme is heavily inspired by [latex-css](https://github.com.cnpmjs.org/vincentdoerig/latex-css).
 
 ## Quick Start
 
@@ -15,8 +17,6 @@ hugo server -t ../..
 ```
 
 Hugo (>= **0.60.1**) is required.
-
-This theme is heavily inspired by [latex-css](https://github.com.cnpmjs.org/vincentdoerig/latex-css).
 
 ## config settings
 
