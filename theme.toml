@@ -8,7 +8,7 @@ description = "LaTeX style hugo theme"
 homepage = "http://example.com/"
 tags = ["blog", "minimal", "simple", "LaTeX"]
 features = ["minimal", "simple", "responsive", "syntax highlight", "LaTeX"]
-min_version = "0.59.1"
+min_version = "0.60.1"
 
 [author]
   name = "HelloRusk"
