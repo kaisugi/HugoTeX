@@ -1,5 +1,9 @@
 <meta charset="utf-8" />
-<title>{{ .Title }}</title>
+{{ if .Title }}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ else }}
+  <title>{{ .Site.Title }}</title>
+{{ end }}
 {{ with .Site.Params.description }}
   <meta name="description" content="{{ . }}" />
 {{ end }}
