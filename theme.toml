@@ -1,6 +1,6 @@
 name = "HugoTeX"
 license = "MIT"
-licenselink = "https://github.com/7ma7X/HugoTeX"
+licenselink = "https://github.com/7ma7X/HugoTeX/blob/master/LICENSE"
 description = "LaTeX style hugo theme"
 homepage = "https://hugotex.netlify.app/"
 tags = ["blog", "minimal", "simple", "LaTeX"]
