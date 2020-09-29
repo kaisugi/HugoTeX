@@ -48,3 +48,7 @@ Any issues or pull requests are welcome.
 ## LICENSE
 
 MIT
+
+## Similar Projects
+
+- [queensferryme / hugo-theme-texify](https://github.com/queensferryme/hugo-theme-texify/)
