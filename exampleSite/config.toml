@@ -1,4 +1,4 @@
-baseURL = "https://www.example.com"
+baseURL = "https://hugotex.netlify.app/"
 title = "HugoTeX"
 paginate = 3
 languageCode = "en"
