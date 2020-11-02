@@ -16,7 +16,7 @@ cd HugoTeX/exampleSite
 hugo server -t ../..
 ```
 
-Hugo (>= **0.60.1**) is required.
+Hugo (>= **0.77.0**) is required.
 
 ## Config settings
 
