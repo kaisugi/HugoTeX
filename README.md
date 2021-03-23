@@ -6,7 +6,7 @@ A hugo theme which looks like a LaTeX document.
 
 **Live Demo: https://hugotex.netlify.app/**
 
-This theme is heavily inspired by [latex-css](https://github.com.cnpmjs.org/vincentdoerig/latex-css).
+This theme is heavily inspired by [latex-css](https://latex.now.sh/).
 
 ## Quick Start
 
