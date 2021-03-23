@@ -10,10 +10,11 @@ This theme is heavily inspired by [latex-css](https://github.com.cnpmjs.org/vinc
 
 ## Quick Start
 
-```
-git clone https://github.com/7ma7X/HugoTeX
+```bash
+git clone https://github.com/HelloRusk/HugoTeX
 cd HugoTeX/exampleSite
 hugo server -t ../..
+# open http://localhost:1313/
 ```
 
 Hugo (>= **0.77.0**) is required.
