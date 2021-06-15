@@ -1,0 +1,4 @@
+{{ $id := md5 .Inner }}
+<label for="{{ $id }}" class="sidenote-toggle sidenote-number"></label>
+<input type="checkbox" id="{{ $id }}" class="sidenote-toggle" />
+<span class="sidenote">{{ .Inner }}</span>
