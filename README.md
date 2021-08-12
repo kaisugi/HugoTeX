@@ -42,6 +42,18 @@ tag = "tags"
 series = "series"
 ```
 
+## Shortcodes
+
+### Sidenotes
+
+[LaTeX.css](https://latex.vercel.app/), which HugoTeX is using, defines syntax for sidenotes. However, as it is a little verbose to write, we provide a Hugo shortcode for that:
+
+```
+A sentence deserving a sidenote.{{% sidenote %}}The note itself.{{% /sidenote %}}.
+```
+
+The note will be displayed on the right margin on larger screens. On smaller screns the note will be hidden by default and will open when clicking on the superscript number marking the existence of the note.
+
 ## For contributors
 
 Any issues or pull requests are welcome.
