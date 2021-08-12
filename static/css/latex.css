@@ -101,8 +101,7 @@ body {
 }
 
 /* Justify and hyphenate all paragraphs */
-p {
-  font-size: large;
+p {  
   text-align: justify;
   hyphens: auto;
   margin-top: 1rem;
@@ -427,6 +426,15 @@ input.sidenote-toggle {
 }
 .footnotes {
   border-top: 1px solid hsl(0, 0%, 39%);
+}
+
+/* Center title and paragraph */
+.abstract,
+.abstract p {
+  text-align: center;
+}
+.abstract {
+  margin: 2.25rem 0;
 }
 
 /* Format the LaTeX symbol correctly (a higher up, e lower) */
