@@ -52,7 +52,7 @@ series = "series"
 A sentence deserving a sidenote.{{% sidenote %}}The note itself.{{% /sidenote %}}.
 ```
 
-The note will be displaied on the right margin on larger screens. On smaller screns the note will be hidden by default and will open when clicking on the superscript number marking the existence of the note.
+The note will be displayed on the right margin on larger screens. On smaller screns the note will be hidden by default and will open when clicking on the superscript number marking the existence of the note.
 
 ## For contributors
 
