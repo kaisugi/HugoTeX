@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color: #dcdcdc;
+    background-color: #292929;
+  }
+
+  html *:not(input) {
+    color: #dcdcdc !important;
+  }
+
+  a[ping]:link,
+  :link:not(cite) {
+    color: #8db2e5 !important;
+  }
+
+  html a:visited {
+    color: #d248ea !important;
+  }
+
+  html cite,
+  html cite a:link,
+  html cite a:visited {
+    color: #92de92 !important;
+  }
+
+  /* inline styles */
+  [style*='background: #'], [style*='background:#'],
+  [style*='background: rgb'], [style*='background:rgb'],
+  [style*='background: var('], [style*='background:var('],
+  [style*='background-color: #'], [style*='background-color:#'],
+  [style*='background-color: rgb'], [style*='background-color:rgb'],
+  [style*='background-color: var('], [style*='background-color:var('] {
+    background-color: #292929 !important;
+  }
+}
