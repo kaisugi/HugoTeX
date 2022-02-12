@@ -14,6 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+{{ if site.Params.darkmode }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/darkmode.css" />
+{{- end }}
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ hugo.Generator -}}
