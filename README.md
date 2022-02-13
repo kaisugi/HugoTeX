@@ -4,7 +4,7 @@ A hugo theme which looks like a LaTeX document.
 
 ![screenshot](images/tn.png)
 
-**Live Demo: https://hugotex.netlify.app/**
+**Live Demo: https://hugotex.vercel.app/**
 
 This theme is heavily inspired by [latex-css](https://latex.now.sh/).
 
@@ -24,7 +24,7 @@ Hugo (>= **0.77.0**) is required.
 example
 
 ```toml
-baseURL = "https://hugotex.netlify.app/"
+baseURL = "https://hugotex.vercel.app/"
 title = "HugoTeX"
 paginate = 3
 languageCode = "en"

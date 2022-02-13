@@ -3,11 +3,11 @@ license = "MIT"
 licenselink = "https://github.com/HelloRusk/HugoTeX/blob/master/LICENSE"
 description = "LaTeX style hugo theme"
 homepage = "https://github.com/HelloRusk/HugoTeX"
-demosite = "https://hugotex.netlify.app/"
+demosite = "https://hugotex.vercel.app/"
 tags = ["dark", "light", "blog", "minimal", "simple", "LaTeX"]
 features = ["minimal", "simple", "responsive", "syntax highlight", "LaTeX"]
 min_version = "0.77.0"
 
 [author]
   name = "HelloRusk"
-  homepage = "https://hellorusk.vercel.app"
+  homepage = "https://github.com/hellorusk"
