@@ -37,9 +37,9 @@ footnoteReturnLinkContents = "^"
   abstract = "I'm a software engineer and a coffee enthusiast in Japan. My primary interest lies in the area of natural language processing."
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
+  category = "categories"
+  tag = "tags"
+  series = "series"
 
 [Params]
   darkmode = true # set true if you prefer dark mode
