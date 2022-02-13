@@ -40,6 +40,9 @@ footnoteReturnLinkContents = "^"
 category = "categories"
 tag = "tags"
 series = "series"
+
+[Params]
+  darkmode = true # set true if you prefer dark mode
 ```
 
 ## Shortcodes
