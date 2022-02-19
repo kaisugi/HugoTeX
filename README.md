@@ -2,7 +2,7 @@
 
 A hugo theme which looks like a LaTeX document.
 
-![screenshot](images/tn.png)
+![screenshot](https://user-images.githubusercontent.com/36184621/154785719-a9ef69da-7672-4e13-bf0d-5565cf0c99e2.png)
 
 **Live Demo: https://hugotex.vercel.app/**
 
