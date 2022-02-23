@@ -41,6 +41,13 @@ footnoteReturnLinkContents = "^"
   tag = "tags"
   series = "series"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "paraiso-dark" # syntax highlighting style
+
 [Params]
   darkmode = true # set true if you prefer dark mode
 ```
