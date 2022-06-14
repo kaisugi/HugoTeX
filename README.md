@@ -11,7 +11,7 @@ This theme is heavily inspired by [latex-css](https://latex.now.sh/).
 ## Quick Start
 
 ```bash
-git clone https://github.com/HelloRusk/HugoTeX
+git clone https://github.com/kaisugi/HugoTeX
 cd HugoTeX/exampleSite
 hugo server -t ../..
 # open http://localhost:1313/

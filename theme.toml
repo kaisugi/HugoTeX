@@ -1,13 +1,13 @@
 name = "HugoTeX"
 license = "MIT"
-licenselink = "https://github.com/HelloRusk/HugoTeX/blob/master/LICENSE"
+licenselink = "https://github.com/kaisugi/HugoTeX/blob/master/LICENSE"
 description = "LaTeX style hugo theme"
-homepage = "https://github.com/HelloRusk/HugoTeX"
+homepage = "https://github.com/kaisugi/HugoTeX"
 demosite = "https://hugotex.vercel.app/"
 tags = ["dark", "light", "blog", "minimal", "simple", "LaTeX"]
 features = ["minimal", "simple", "responsive", "syntax highlight", "LaTeX"]
 min_version = "0.92.0"
 
 [author]
-  name = "HelloRusk"
-  homepage = "https://github.com/hellorusk"
+  name = "kaisugi"
+  homepage = "https://github.com/kaisugi"
