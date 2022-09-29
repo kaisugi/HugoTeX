@@ -52,6 +52,18 @@ footnoteReturnLinkContents = "^"
   darkmode = true # set true if you prefer dark mode
 ```
 
+### Social media
+
+If you want to enable the generation of Twitter Card or Opengraph `meta` tags so you get nice embeds on Twitter, Facebook and other social media sites, add the following:
+
+```toml
+[Params]
+  twittercard = true
+  opengraph = true
+```
+
+See the [Internal Templates](https://gohugo.io/templates/internal/) in Hugo for how to configure this behaviour further.
+
 ## Shortcodes
 
 ### Sidenotes
