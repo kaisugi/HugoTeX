@@ -12,6 +12,12 @@
 {{- end }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{ if site.Params.twittercard }}
+{{ template "_internal/twitter_cards.html" . }}
+{{- end }}
+{{ if site.Params.opengraph }}
+{{ template "_internal/opengraph.html" . }}
+{{- end }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
 {{ if site.Params.darkmode }}
