@@ -71,13 +71,14 @@ dd {
   margin: 0;
 }
 
-/* Add smooth scrolling to anchors */
+/* Make default font-size 1rem and add smooth scrolling to anchors */
 html {
-  scroll-behavior: smooth;
+  font-size: 1rem;
 }
-
-body.libertinus {
-  font-family: 'Libertinus', Georgia, Cambria, 'Times New Roman', Times, serif;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -101,9 +102,11 @@ body {
 }
 
 /* Justify and hyphenate all paragraphs */
-p {  
+p {
   text-align: justify;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   margin-top: 1rem;
 }
 
@@ -432,9 +435,14 @@ input.sidenote-toggle {
 .abstract,
 .abstract p {
   text-align: center;
+  margin-top: 0;
 }
 .abstract {
   margin: 2.25rem 0;
+}
+.abstract > h2 {
+  font-size: 1rem;
+  margin-bottom: -0.2rem;
 }
 
 /* Format the LaTeX symbol correctly (a higher up, e lower) */
