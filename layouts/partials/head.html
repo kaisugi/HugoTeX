@@ -10,12 +10,12 @@
 {{- with .Site.Author.Name }}
   <meta name="author" content="{{ . }}"/>
 {{- end }}
+<meta name="theme-color" content="#FF0000"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
-{{ if site.Params.darkmode }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/darkmode.css" />
-{{- end }}
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
 {{ hugo.Generator -}}

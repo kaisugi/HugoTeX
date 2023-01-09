@@ -1,4 +1,3 @@
-
 {{ if .IsHome }}
 {{ if .Site.Params.homeTitle }}
   {{ $.Scratch.Set "title" .Site.Params.homeTitle }}
@@ -25,9 +24,11 @@
 
             {{ if .Site.Author.abstract }}
               <div class="abstract">
-                <h5>Abstract</h5>
+                <h2>Résumé</h2>
                 <p>
                   {{ .Site.Author.abstract }}
+                  <br>
+                  {{ .Site.Params.Description }}
                 </p>
               </div>
             {{ end }}

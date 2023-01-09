@@ -25,3 +25,26 @@ footer .theme-by {
   float: right;
   display: block;
 }
+
+input {
+  background-color: #000000;
+}
+
+.nav-links{
+  font-size: 24px;
+  padding: 8px;
+}
+
+.nav-links a {
+padding: 8px
+}
+
+.nav-logo{
+  float:left;
+  margin-right: 18px;
+  height: 87px
+}
+
+.logo{
+  flex-shrink: 0
+}

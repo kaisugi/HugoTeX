@@ -1,0 +1,33 @@
+{{ define "main" }}
+<form id="search"
+    action='{{ with .GetPage "/chercher" }}{{.Permalink}}{{end}}' method="get">
+    <label hidden for="search-input">Rechercher dans ce site</label>
+    <input type="text" id="search-input" name="query"
+    placeholder="Entrez ici votre requête">
+    <input type="submit" value="Chercher">
+</form>
+
+<ul id="results">
+    <li>
+       Entrez des mots clefs ci-dessus pour chercher dans le site. 
+    </li>
+</ul>
+ <script>
+window.store = {
+    // You can specify your blog section only:
+    {{ range .Site.Pages }}
+    // For all pages in your site, use "range .Site.Pages"
+    // You can use any unique identifier here
+    "{{ .Permalink }}": {
+        // You can customize your searchable fields using any .Page parameters
+        "title": "{{ .Title  }}",
+        "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
+        "content": {{ .Content | plainify }}, // Strip out HTML tags
+        "url": "{{ .Permalink }}"
+    },
+    {{ end }}
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli" crossorigin="anonymous"></script>
+<script src="/js/search.js"></script>
+{{ end }}

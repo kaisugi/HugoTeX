@@ -1,9 +1,18 @@
 <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}
+  <i class="fa fa-calendar-alt"></i>{{ .Date | time.Format ":date_full" }}
   {{ if .Params.categories }}
     <br><i class="fa fa-folder-open"></i>
     {{ range .Params.categories }}
-      <a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+      <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
     {{ end }}
   {{ end }}
+  <div class="time-read">
+    {{ .ReadingTime }} minute(s)
+  </div>
+  <div class="tags">
+    <a href="{{ $.Site.BaseURL }}tags">Tags</a> : 
+          {{ range .Params.tags }}
+            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>, 
+          {{ end }}
+  </div>
 </span>

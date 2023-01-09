@@ -1,16 +1,17 @@
-@media (prefers-color-scheme: dark) {
+@media screen {
   html, body {
     color: #dcdcdc;
     background-color: #292929;
   }
 
   html *:not(input) *:not(span) {
-    color: #dcdcdc !important;
+    color: #dcdcdc;
   }
 
   a[ping]:link,
   :link:not(cite) {
     color: #8db2e5 !important;
+ /* color:  rgb(170, 0, 0) !important */   
   }
 
   html a:visited {
