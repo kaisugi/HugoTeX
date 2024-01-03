@@ -6,7 +6,7 @@
         Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
         <br>
         {{ end }}
-        <a href="{{ .Site.BaseURL }}about">{{ .Site.Author.name }}</a>
+        <a href="{{ .Site.BaseURL }}about">{{ .Site.Params.Author.name }}</a>
         &copy;
         {{ .Site.LastChange.Format "2006" }}
       </p>
