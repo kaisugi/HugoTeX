@@ -1,8 +1,10 @@
 /*!
- * LaTeX.css (https://latex.now.sh/)
+ * Taken from LaTeX.css (https://latex.now.sh/)
  *
  * Source: https://github.com/vincentdoerig/latex-css
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
+ *
+ * Modified for this usecase.
 */
 
 @font-face {
@@ -185,7 +187,7 @@ body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
-  max-width: 80ch;
+  max-width: 90ch;
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
