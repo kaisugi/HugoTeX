@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
+    {{- if site.Params.darkmode -}}
+    <body class="latex-dark">
+    {{- else if site.Params.lightmode -}}
     <body>
+    {{- else -}}
+    <body class="latex-dark-auto">
+    {{- end -}}
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}

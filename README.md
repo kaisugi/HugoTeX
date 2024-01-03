@@ -49,8 +49,11 @@ footnoteReturnLinkContents = "^"
     style = "paraiso-dark" # syntax highlighting style
 
 [Params]
-  darkmode = true # set true if you prefer dark mode
+  darkmode = true # set true if you want to enforce dark mode
+  # lightmode = true # set true if you want to enforce light mode
 ```
+
+**By default, dark mode is automatically enabled based on `prefers-color-scheme` media query. If you want to enforce or deactivate this setting, set `darkmode=true` or `lightmode=true` in [Params]** 
 
 ### Social media
 
