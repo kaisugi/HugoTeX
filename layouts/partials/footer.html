@@ -2,8 +2,10 @@
   <div class="container">
     <p class="credits copyright">
       <p class="credits theme-by">
+        {{ if .Site.Params.PoweredBy }}
         Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
         <br>
+        {{ end }}
         <a href="{{ .Site.BaseURL }}about">{{ .Site.Author.name }}</a>
         &copy;
         {{ .Site.LastChange.Format "2006" }}
