@@ -2,6 +2,10 @@
   <div class="container">
     <p class="credits copyright">
       <p class="credits theme-by">
+        {{ if .Site.Title }}
+        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        <br>
+        {{ end }}
         {{ if .Site.Params.Legal }}
         <a href="{{ .Site.BaseURL }}legal">{{ .Site.Params.Legal }}</a>
         <br>
