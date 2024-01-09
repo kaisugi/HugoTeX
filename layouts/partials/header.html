@@ -21,13 +21,13 @@
         {{ else }}
           <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
           {{ if .IsHome }}
-            <p class="author">{{ with .Site.Author.name }}{{.}}{{ else }}<br/>{{ end }}</p>
+            <p class="author">{{ with .Site.Params.Author.name }}{{.}}{{ else }}<br/>{{ end }}</p>
 
-            {{ if .Site.Author.abstract }}
+            {{ if .Site.Params.Author.abstract }}
               <div class="abstract">
                 <h5>Abstract</h5>
                 <p>
-                  {{ .Site.Author.abstract }}
+                  {{ .Site.Params.Author.abstract }}
                 </p>
               </div>
             {{ end }}

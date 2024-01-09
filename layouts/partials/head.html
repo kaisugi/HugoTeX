@@ -7,7 +7,7 @@
 {{ with .Site.Params.description }}
   <meta name="description" content="{{ . }}" />
 {{ end }}
-{{- with .Site.Author.Name }}
+{{- with .Site.Params.Author.Name }}
   <meta name="author" content="{{ . }}"/>
 {{- end }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />

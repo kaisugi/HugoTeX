@@ -2,11 +2,20 @@
   <div class="container">
     <p class="credits copyright">
       <p class="credits theme-by">
+        {{ if .Site.Params.Legal }}
+        <a href="{{ .Site.BaseURL }}legal">{{ .Site.Params.Legal }}</a>
+        <br>
+        {{ end }}
+        {{ if .Site.Params.PoweredBy }}
         Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
         <br>
-        <a href="{{ .Site.BaseURL }}about">{{ .Site.Author.name }}</a>
+        {{ end }}
+        {{ if .Site.Title }}
+        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>,
+        {{ end }}
         &copy;
         {{ .Site.LastChange.Format "2006" }}
+        <a href="{{ .Site.BaseURL }}about">{{ .Site.Params.Author.name }}</a>
       </p>
   </div>
 </footer>

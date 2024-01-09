@@ -32,9 +32,12 @@ DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
-[author]
+[Params.Author]
   name = "Kaito Sugimoto"
-  abstract = "I'm a software engineer and a coffee enthusiast in Japan. My primary interest lies in the area of natural language processing."
+  abstract = """
+  I'm a software engineer and a coffee enthusiast in Japan.
+  My primary interest lies in the area of natural language processing.
+  """
 
 [taxonomies]
   category = "categories"
