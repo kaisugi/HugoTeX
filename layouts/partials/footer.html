@@ -3,7 +3,7 @@
     <p class="credits copyright">
       <p class="credits theme-by">
         {{ if .Site.Params.Legal }}
-        <a href="{{ .Site.BaseURL }}legal">{{ .Site.Params.Legal }}</a>
+        <a href="{{ .Site.BaseURL }}legal/">{{ .Site.Params.Legal }}</a>
         <br>
         {{ end }}
         {{ if .Site.Params.PoweredBy }}
@@ -15,7 +15,7 @@
         {{ end }}
         &copy;
         {{ .Site.LastChange.Format "2006" }}
-        <a href="{{ .Site.BaseURL }}about">{{ .Site.Params.Author.name }}</a>
+        <a href="{{ .Site.BaseURL }}about/">{{ .Site.Params.Author.name }}</a>
       </p>
   </div>
 </footer>
