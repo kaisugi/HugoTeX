@@ -1,0 +1,9 @@
+{{ $htmlTable := .Inner | markdownify }}
+{{ $old := "<table>" }}
+{{ $new := "" }}
+{{ $title := .Get "title" }}
+{{ if $title }}
+  {{ $new = printf "<table><caption>%s</caption>" ($title | markdownify) }}
+{{ end }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+{{ $htmlTable | safeHTML }}
