@@ -17,7 +17,7 @@ hugo server -t ../..
 # open http://localhost:1313/
 ```
 
-Hugo (>= **0.92.0**) is required.
+Hugo (>= **0.123.0**) is required.
 
 ## Config settings
 
