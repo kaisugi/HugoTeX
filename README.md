@@ -26,11 +26,13 @@ example
 ```toml
 baseURL = "https://hugotex.vercel.app/"
 title = "HugoTeX"
-paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
+
+[pagination]
+  pagerSize = 3
 
 [Params.Author]
   name = "Kaito Sugimoto"
