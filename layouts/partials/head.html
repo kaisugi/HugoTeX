@@ -1,3 +1,4 @@
+<head>
 <meta charset="utf-8" />
 {{ if .Title }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
@@ -24,4 +25,4 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
 <script id="MathJax-script" async src="{{ .Site.BaseURL }}js/tex-mml-chtml.js"></script>
-{{ hugo.Generator -}}
+</head>
