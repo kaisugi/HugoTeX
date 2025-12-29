@@ -1,44 +1,121 @@
 # HugoTeX
 
-A hugo theme which looks like a LaTeX document.
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.141.0-blue.svg)](https://gohugo.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/kaisugi/HugoTeX?style=social)](https://github.com/kaisugi/HugoTeX/stargazers)
+
+> A LaTeX-inspired Hugo theme for elegant technical writing and academic content
+
+Transform your Hugo site into a beautifully typeset document with the classic aesthetics of LaTeX. Perfect for researchers, mathematicians, and anyone who appreciates excellent typography.
 
 ![screenshot](https://user-images.githubusercontent.com/36184621/154785719-a9ef69da-7672-4e13-bf0d-5565cf0c99e2.png)
 
-**Live Demo: https://hugotex.vercel.app/**
+**[Live Demo →](https://hugotex.vercel.app/)**
 
-This theme is heavily inspired by [latex-css](https://latex.now.sh/).
+## ✨ Features
 
-## Quick Start
+- 📐 **LaTeX-style Typography** - Classic, elegant document styling inspired by LaTeX
+- ⚡ **Server-Side Math Rendering** - KaTeX with zero JavaScript overhead, instant page loads
+- 🌓 **Automatic Dark Mode** - Respects system preferences with seamless theme switching
+- 📱 **Mobile Optimized** - Fast and responsive on all devices
+- 🚀 **Lightning Fast** - No client-side JavaScript required for math rendering
+- 🔍 **SEO-Friendly** - Built-in OpenGraph and Twitter Card support
+- 📝 **Sidenotes Support** - Elegant margin notes for supplementary content
+- 🎨 **Customizable** - Easy theming with simple configuration
+- ♿ **Accessible** - Works perfectly even with JavaScript disabled
+
+## 🎯 Perfect For
+
+- **Researchers & Academics** - Write papers and notes with LaTeX-quality output
+- **Technical Bloggers** - Share tutorials and documentation with beautiful code and math
+- **Mathematics Content** - Display complex equations with proper typesetting
+- **Science Communicators** - Present technical content in an elegant, readable format
+- **Anyone** - Who appreciates clean, professional typography
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Hugo >= **0.141.0** ([Download Hugo](https://gohugo.io/installation/))
+- Git
+
+### Try It Out
 
 ```bash
+# Clone the repository
 git clone https://github.com/kaisugi/HugoTeX
 cd HugoTeX/exampleSite
+
+# Start the development server
 hugo server -t ../..
-# open http://localhost:1313/
+
+# Open http://localhost:1313/ in your browser
 ```
 
-Hugo (>= **0.141.0**) is required.
+## 📦 Installation
 
-## Config settings
+### Method 1: Git Submodule (Recommended)
 
-example
+```bash
+# Add the theme as a submodule to your Hugo site
+cd your-hugo-site
+git submodule add https://github.com/kaisugi/HugoTeX.git themes/HugoTeX
+
+# Update your config
+echo 'theme = "HugoTeX"' >> hugo.toml
+```
+
+### Method 2: Hugo Modules
+
+```bash
+# Initialize your site as a Hugo module
+hugo mod init github.com/yourusername/yoursite
+
+# Add to your hugo.toml
+cat >> hugo.toml << EOF
+[module]
+  [[module.imports]]
+    path = "github.com/kaisugi/HugoTeX"
+EOF
+
+# Get the theme
+hugo mod get
+```
+
+### Method 3: Direct Clone
+
+```bash
+# Clone directly into themes directory
+cd your-hugo-site/themes
+git clone https://github.com/kaisugi/HugoTeX.git
+```
+
+## ⚙️ Configuration
+
+### Basic Setup
+
+Create or update your `hugo.toml`:
 
 ```toml
-baseURL = "https://hugotex.vercel.app/"
-title = "HugoTeX"
+baseURL = "https://example.com/"
+title = "My Hugo Site"
+theme = "HugoTeX"
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
 [pagination]
-  pagerSize = 3
+  pagerSize = 10
+
+[Params]
+  darkmode = true  # Set to true to enforce dark mode
+  # lightmode = true  # Set to true to enforce light mode
 
 [Params.Author]
-  name = "Kaito Sugimoto"
+  name = "Your Name"
   abstract = """
-  I'm a software engineer and a coffee enthusiast in Japan.
-  My primary interest lies in the area of natural language processing.
+  Your bio goes here. This appears on the homepage.
   """
 
 [taxonomies]
@@ -57,30 +134,22 @@ footnoteReturnLinkContents = "^"
           inline = [['$', '$']]
           block = [['$$', '$$']]
   [markup.highlight]
-    style = "paraiso-dark" # syntax highlighting style
-
-[Params]
-  darkmode = true # set true if you want to enforce dark mode
-  # lightmode = true # set true if you want to enforce light mode
+    style = "paraiso-dark"  # Syntax highlighting style
 ```
 
-**By default, dark mode is automatically enabled based on `prefers-color-scheme` media query. If you want to enforce or deactivate this setting, set `darkmode=true` or `lightmode=true` in [Params]**
+### Theme Options
 
-### Math Typesetting
+**Dark Mode Control**
 
-HugoTeX uses [KaTeX](https://katex.org/) for mathematical notation with **server-side rendering**. This means:
-- No JavaScript is required on the client side
-- Math renders instantly without any page load delay
-- Works even with JavaScript disabled
-- Better performance, especially on mobile devices
+By default, dark mode automatically activates based on the user's system `prefers-color-scheme` setting.
 
-Math expressions are automatically processed using Hugo's built-in `transform.ToMath` function. Simply use `$...$` for inline math and `$$...$$` for display math in your markdown files.
+- Set `darkmode = true` to enforce dark mode
+- Set `lightmode = true` to enforce light mode
+- Omit both for automatic switching
 
-The passthrough extension configuration (shown in the config example above) enables this functionality. See [Hugo's Math in Markdown documentation](https://gohugo.io/content-management/mathematics/) for more details.
+### Social Media Integration
 
-### Social media
-
-If you want to enable the generation of Twitter Card or Opengraph `meta` tags so you get nice embeds on Twitter, Facebook and other social media sites, add the following:
+Enable rich previews on social platforms:
 
 ```toml
 [Params]
@@ -88,28 +157,105 @@ If you want to enable the generation of Twitter Card or Opengraph `meta` tags so
   opengraph = true
 ```
 
-See the [Internal Templates](https://gohugo.io/templates/internal/) in Hugo for how to configure this behaviour further.
+See [Hugo's Internal Templates](https://gohugo.io/templates/internal/) for advanced configuration.
 
-## Shortcodes
+## 📐 Math Typesetting
+
+HugoTeX uses [KaTeX](https://katex.org/) with **server-side rendering** for mathematical notation.
+
+### Why Server-Side?
+
+- ⚡ **Zero JavaScript overhead** - Math renders instantly, no client-side processing
+- 📱 **Better mobile performance** - Especially on slower devices
+- ♿ **Works without JavaScript** - Accessible by default
+- 🚀 **Faster page loads** - No render blocking
+
+### Usage
+
+Simply write math expressions in your Markdown:
+
+**Inline math:** `$E = mc^2$` → $E = mc^2$
+
+**Display math:**
+```markdown
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+```
+
+Math is automatically processed using Hugo's built-in `transform.ToMath` function. The passthrough extension (shown in config above) enables this functionality.
+
+**Reference:** [Hugo Math in Markdown](https://gohugo.io/content-management/mathematics/) | [KaTeX Supported Functions](https://katex.org/docs/supported.html)
+
+## 🎨 Shortcodes
 
 ### Sidenotes
 
-[LaTeX.css](https://latex.vercel.app/), which HugoTeX is using, defines syntax for sidenotes. However, as it is a little verbose to write, we provide a Hugo shortcode for that:
+Create elegant margin notes with the sidenote shortcode:
 
+```markdown
+Here's some text with a sidenote.{{%/* sidenote */%}}This appears in the margin.{{%/* /sidenote */%}}
 ```
-A sentence deserving a sidenote.{{% sidenote %}}The note itself.{{% /sidenote %}}.
+
+**Behavior:**
+- **Desktop:** Displays in the right margin
+- **Mobile:** Hidden by default, revealed by clicking the reference number
+
+This feature is powered by [LaTeX.css](https://latex.vercel.app/).
+
+## 🎨 Customization
+
+### Syntax Highlighting
+
+Change the code highlighting theme in your config:
+
+```toml
+[markup.highlight]
+  style = "monokai"  # Try: github, dracula, nord, etc.
 ```
 
-The note will be displayed on the right margin on larger screens. On smaller screns the note will be hidden by default and will open when clicking on the superscript number marking the existence of the note.
+Browse available styles: [Chroma Style Gallery](https://xyproto.github.io/splash/docs/)
 
-## For contributors
+### Custom CSS
 
-Any issues or pull requests are welcome.
+Add custom styles by creating `assets/css/custom.css` in your site directory.
 
-## LICENSE
+## 🌟 Showcase
 
-MIT
+Using HugoTeX? We'd love to feature your site! Open an issue or PR to add it here.
 
-## Similar Projects
+## 🤝 Contributing
 
-- [queensferryme / hugo-theme-texify](https://github.com/queensferryme/hugo-theme-texify/)
+Contributions are welcome! Here's how you can help:
+
+- 🐛 **Report bugs** - Open an issue describing the problem
+- ✨ **Suggest features** - Share your ideas for improvements
+- 📝 **Improve documentation** - Help make the docs clearer
+- 🔧 **Submit pull requests** - Fix bugs or add features
+
+Before contributing:
+1. Check existing issues and PRs
+2. Test your changes thoroughly
+3. Follow the existing code style
+4. Update documentation as needed
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details
+
+## 🙏 Credits
+
+This theme is heavily inspired by:
+- [LaTeX.css](https://latex.vercel.app/) - CSS library mimicking LaTeX style
+- [latex-css](https://latex.now.sh/) - Original inspiration
+
+## 📚 Similar Projects
+
+Looking for alternatives? Check out:
+- [hugo-theme-texify](https://github.com/queensferryme/hugo-theme-texify/) - Another excellent LaTeX-inspired theme
+
+---
+
+**Made with ❤️ by [Kaito Sugimoto](https://github.com/kaisugi)**
+
+If you find HugoTeX useful, please consider giving it a ⭐ on GitHub!
