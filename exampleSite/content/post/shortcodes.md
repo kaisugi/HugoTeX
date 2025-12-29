@@ -29,7 +29,7 @@ A sentence deserving a sidenote.{{% sidenote %}}The note itself.{{% /sidenote %}
 Another shortcode allows to insert tables with captions:
 
 ```md
-{{< table title="A sample table with a descriptive caption via [LaTeX.css](https://latex.vercel.app/)." >}}
+{{</* table title="A sample table with a descriptive caption via [LaTeX.css](https://latex.vercel.app/)." */>}}
 | Header 1      | Header 2      | Header 3      |
 |---------------|---------------|---------------|
 | Description 1 | Description 2 | Description 3 |
@@ -37,7 +37,7 @@ Another shortcode allows to insert tables with captions:
 | Description 1 | Description 2 | Description 3 |
 |---------------|---------------|---------------|
 | Footer 1      | Footer 2      | Footer 3      |
-{{< /table >}}
+{{</* /table */>}}
 ```
 
 Will render into
