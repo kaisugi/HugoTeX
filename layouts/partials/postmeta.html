@@ -9,7 +9,7 @@
   {{ if .Params.categories }}
     <br><i class="fa fa-folder-open"></i>
     {{ range .Params.categories }}
-      <a href="{{ $.Site.BaseURL }}/categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+      <a href="{{ printf "/categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>&nbsp;
     {{ end }}
   {{ end }}
 </span>
