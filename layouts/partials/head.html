@@ -24,15 +24,7 @@
 {{ end -}}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
-{{ if or .Params.math .Site.Params.math }}
-<script id="MathJax-script" async src="{{ .Site.BaseURL }}js/tex-mml-chtml.js"></script>
-<script>
-  MathJax = {
-    tex: {
-      displayMath: [['$$', '$$']],
-      inlineMath: [['$', '$']],
-    },
-  };
-</script>
+{{ if .Page.Store.Get "hasMath" }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/katex.min.css" />
 {{ end }}
 </head>
