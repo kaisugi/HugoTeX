@@ -10,7 +10,7 @@
       {{ if .Params.tags }}
         <div class="blog-tags">
           {{ range .Params.tags }}
-          <a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+          <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">{{ . }}</a>&nbsp;
           {{ end }}
         </div>
       {{ end }}
