@@ -64,7 +64,19 @@ footnoteReturnLinkContents = "^"
   # lightmode = true # set true if you want to enforce light mode
 ```
 
-**By default, dark mode is automatically enabled based on `prefers-color-scheme` media query. If you want to enforce or deactivate this setting, set `darkmode=true` or `lightmode=true` in [Params]** 
+**By default, dark mode is automatically enabled based on `prefers-color-scheme` media query. If you want to enforce or deactivate this setting, set `darkmode=true` or `lightmode=true` in [Params]**
+
+### Math Typesetting
+
+HugoTeX uses [KaTeX](https://katex.org/) for mathematical notation with **server-side rendering**. This means:
+- No JavaScript is required on the client side
+- Math renders instantly without any page load delay
+- Works even with JavaScript disabled
+- Better performance, especially on mobile devices
+
+Math expressions are automatically processed using Hugo's built-in `transform.ToMath` function. Simply use `$...$` for inline math and `$$...$$` for display math in your markdown files.
+
+The passthrough extension configuration (shown in the config example above) enables this functionality. See [Hugo's Math in Markdown documentation](https://gohugo.io/content-management/mathematics/) for more details.
 
 ### Social media
 
