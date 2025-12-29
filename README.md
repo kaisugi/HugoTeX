@@ -50,6 +50,12 @@ footnoteReturnLinkContents = "^"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          inline = [['$', '$']]
+          block = [['$$', '$$']]
   [markup.highlight]
     style = "paraiso-dark" # syntax highlighting style
 

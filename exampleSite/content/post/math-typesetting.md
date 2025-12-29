@@ -3,18 +3,14 @@ author: Hugo Authors
 title: Math Typesetting
 date: 2019-03-08
 description: A brief guide to setup KaTeX
-math: true
 ---
 
-Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
+Mathematical notation in a Hugo project via Hugo's embedded instance of the KaTeX.
 <!--more-->
 
-In this example we will be using [MathJax](https://www.mathjax.org/)
+In this example we will be using [KaTeX](https://katex.org/)
 
-- To enable MathJax globally set the parameter `math` to `true` in a project's configuration
-- To enable MathJax on a per page basis include the parameter `math: true` in content files
-
-**Note:** Use the online reference of [Supported TeX Functions](https://docs.mathjax.org/en/v4.0/input/tex/macros/index.html#supported-tex-latex-commands)
+**Note:** Use the online reference of [Supported TeX Functions](https://katex.org/docs/supported)
 
 ### Examples
 
