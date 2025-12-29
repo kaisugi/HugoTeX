@@ -22,9 +22,9 @@
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+<link rel="stylesheet" href="{{ "css/latex.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}" />
 {{ if .Page.Store.Get "hasMath" }}
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/katex.min.css" />
+<link rel="stylesheet" href="{{ "css/katex.min.css" | relURL }}" />
 {{ end }}
 </head>
