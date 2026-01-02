@@ -6,7 +6,7 @@
     {{ partial "postmeta.html" . }}
   </div>
   <div class="post-entry">
-    {{ if .Truncated }}
+    {{ if in .RawContent "<!--more-->" }}
       <p>{{ .Summary }}</p>
         <a href="{{ .RelPermalink }}" class="post-read-more">Read More</a>
     {{ end }}
