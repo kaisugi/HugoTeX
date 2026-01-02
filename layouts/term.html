@@ -1,16 +1,11 @@
 {{ define "main" }}
 
 <div class="container" role="main">
-  <article class="post-preview">
-    {{ range .Data.Terms.Alphabetical }}
-      <div class="terms">
-        <h4 class="term-name" >
-          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
-          <span class="badge">{{ .Count }}</span>
-        </h4>
-      </div>
+  <div class="posts-list">
+    {{ range .Pages }}
+      {{ partial "preview.html" . }}
     {{ end }}
-  </article>
+  </div>
 </div>
 
 {{ end }}

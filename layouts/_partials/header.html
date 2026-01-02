@@ -16,8 +16,9 @@
   <div class="intro-header">
     <div class="container">
       <div class="{{ .Type }}-heading">
-        {{ if eq .Type "list" }}
-          <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
+        {{ if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+          <h1>{{ .Title }}</h1>
+          <p class="author"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></p>
         {{ else }}
           <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
           {{ $author := "" }}
@@ -31,7 +32,11 @@
           {{ end }}
           {{ with $author }}
             <p class="author">
-              <a href="{{ "about/" | relURL }}">{{ . }}</a> at <a href="{{ "/" | relURL }}">{{ $.Site.Title }}</a>
+              {{- if $.IsHome -}}
+                <a href="{{ "about/" | relURL }}">{{ . }}</a>
+              {{- else -}}
+                <a href="{{ "about/" | relURL }}">{{ . }}</a> at <a href="{{ "/" | relURL }}">{{ $.Site.Title }}</a>
+              {{- end -}}
               {{- if $.IsPage -}}
                 <br>
                 {{- $lastmod := $.Lastmod.Format ($.Site.Params.dateformat | default "Jan 2, 2006") -}}
