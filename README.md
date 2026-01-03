@@ -21,6 +21,7 @@ Transform your Hugo site into a beautifully typeset document with the classic ae
 - 🚀 **Lightning Fast** - No client-side JavaScript required for math rendering
 - 🔍 **SEO-Friendly** - Built-in OpenGraph and Twitter Card support
 - 📝 **Sidenotes Support** - Elegant margin notes for supplementary content
+- 📄 **Article Abstracts** - Automatically displays content before `<!--more-->` as an academic-style abstract
 - 🎨 **Customizable** - Easy theming with simple configuration
 - ♿ **Accessible** - Works perfectly even with JavaScript disabled
 
