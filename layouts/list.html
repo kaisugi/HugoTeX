@@ -1,5 +1,17 @@
 {{ define "main" }}
 <div class="container" role="main">
+  {{ if eq .Kind "taxonomy" }}
+    <article class="post-preview">
+      {{ range .Data.Terms.Alphabetical }}
+        <div class="terms">
+          <h4 class="term-name">
+            <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+            <span class="badge">{{ .Count }}</span>
+          </h4>
+        </div>
+      {{ end }}
+    </article>
+  {{ else }}
     <div class="posts-list">
       {{ if .IsHome }}
         {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
@@ -10,7 +22,7 @@
       {{ range .Paginator.Pages }}
         {{ partial "preview.html" . }}
       {{ end }}
-      </div>
+    </div>
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     <ul class="pager">
       {{ if .Paginator.HasPrev }}
@@ -24,6 +36,7 @@
         </li>
       {{ end }}
     </ul>
+    {{ end }}
   {{ end }}
 </div>
 {{ end }}
