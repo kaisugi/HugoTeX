@@ -6,7 +6,7 @@ homepage = "https://github.com/kaisugi/HugoTeX"
 demosite = "https://hugotex.vercel.app/"
 tags = ["dark", "light", "blog", "minimal", "simple", "LaTeX"]
 features = ["minimal", "simple", "responsive", "syntax highlight", "LaTeX"]
-min_version = "0.128.0"
+min_version = "0.146.0"
 
 [author]
   name = "kaisugi"
