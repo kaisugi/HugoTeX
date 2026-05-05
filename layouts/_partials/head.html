@@ -14,6 +14,11 @@
 {{- end }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{ with .Params.relcanonical }}
+<link rel="canonical" href="{{ . }}" itemprop="url" />
+{{ else -}}
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+{{ end -}}
 {{ if site.Params.twittercard }}
 {{ template "_internal/twitter_cards.html" . }}
 {{- end }}

@@ -186,6 +186,25 @@ convert /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png static/favic
 rm -f /tmp/favicon-2048.png /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png
 ```
 
+### Canonical URLs
+
+HugoTeX renders a canonical link in the document head for every page. By
+default it uses Hugo's `.Permalink`, derived from `baseURL` and the page
+URL.
+
+Set `relcanonical` in page front matter only when the page should declare
+a different canonical URL, for example when the same content also exists
+at another permanent address. The value is rendered without conversion,
+so it must be a full absolute URL with scheme and host; do not use
+relative paths.
+
+```toml
++++
+title = "A duplicated page"
+relcanonical = "https://example.com/original-page/"
++++
+```
+
 ### Social Media Integration
 
 Enable rich previews on social platforms:
