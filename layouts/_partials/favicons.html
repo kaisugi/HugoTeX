@@ -1,0 +1,14 @@
+{{- $favicon := site.Params.Favicon | default site.Params.favicon -}}
+{{- with $favicon }}
+  {{- with .ico }}
+<link rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32 48x48" href="{{ . | relURL }}">
+  {{- end }}
+  {{- with .png }}
+<meta name="apple-mobile-web-app-title" content="{{ site.Title }}">
+<link rel="icon" type="image/png" sizes="180x180" href="{{ . | relURL }}">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ . | relURL }}">
+  {{- end }}
+  {{- with .svg }}
+<link rel="icon" type="image/svg+xml" sizes="any" href="{{ . | relURL }}">
+  {{- end }}
+{{- end }}

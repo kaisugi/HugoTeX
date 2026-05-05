@@ -1,6 +1,6 @@
 # HugoTeX
 
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.146.0-blue.svg)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.158.0-blue.svg)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/kaisugi/HugoTeX?style=social)](https://github.com/kaisugi/HugoTeX/stargazers)
 
@@ -37,7 +37,7 @@ Transform your Hugo site into a beautifully typeset document with the classic ae
 
 ### Prerequisites
 
-- Hugo >= **0.146.0** ([Download Hugo](https://gohugo.io/installation/))
+- Hugo >= **0.158.0** ([Download Hugo](https://gohugo.io/installation/))
 - Git
 
 ### Try It Out
@@ -112,6 +112,10 @@ footnoteReturnLinkContents = "^"
 [Params]
   darkmode = true  # Set to true to enforce dark mode
   # lightmode = true  # Set to true to enforce light mode
+  [Params.Favicon]
+    ico = "/favicon.ico"
+    svg = "/favicon.svg"
+    png = "/favicon.png"
 
 [Params.Author]
   name = "Your Name"
@@ -147,6 +151,40 @@ By default, dark mode automatically activates based on the user's system `prefer
 - Set `darkmode = true` to enforce dark mode
 - Set `lightmode = true` to enforce light mode
 - Omit both for automatic switching
+
+### Favicon Support
+
+Define icon paths once under `[Params.Favicon]`. Every field is optional; only provided values are rendered.
+The recommended setup uses `/favicon.ico`, `/favicon.svg`, and `/favicon.png`.
+`ico` should point to a multi-size `.ico` file, at minimum 16, 32, and 48 px, for legacy browser support.
+`png` is rendered as both a 180x180 PNG favicon fallback and the Apple touch icon.
+
+```toml
+[Params.Favicon]
+  ico = "/favicon.ico"                     # Legacy multi-size .ico fallback
+  svg = "/favicon.svg"                     # SVG icon for modern browsers
+  png = "/favicon.png"                     # 180x180 PNG fallback and Apple touch icon
+```
+
+Place these files in the site's `static` directory:
+`static/favicon.ico`, `static/favicon.svg`, and `static/favicon.png`.
+For an SVG with shadows, filters, or transparent padding, render a large
+PNG first, trim the transparent canvas, then resize and re-center the
+result:
+
+```sh
+rsvg-convert -f png -w 2048 -h 2048 -o /tmp/favicon-2048.png static/favicon.svg
+
+convert /tmp/favicon-2048.png -alpha set -trim +repage -resize 180x180 -background none -gravity center -extent 180x180 static/favicon.png
+
+convert /tmp/favicon-2048.png -alpha set -trim +repage -resize 16x16 -background none -gravity center -extent 16x16 /tmp/favicon-16.png
+convert /tmp/favicon-2048.png -alpha set -trim +repage -resize 32x32 -background none -gravity center -extent 32x32 /tmp/favicon-32.png
+convert /tmp/favicon-2048.png -alpha set -trim +repage -resize 48x48 -background none -gravity center -extent 48x48 /tmp/favicon-48.png
+
+convert /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png static/favicon.ico
+
+rm -f /tmp/favicon-2048.png /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png
+```
 
 ### Social Media Integration
 
