@@ -1,14 +1,13 @@
 <article class="post-preview">
-  <a href="{{ .RelPermalink }}">
-      <h2 class="post-title">{{ .Title }}</h2>
-  </a>
+  <h2 class="post-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h2>
   <div class="postmeta">
     {{ partial "postmeta.html" . }}
   </div>
   <div class="post-entry">
     {{ if in .RawContent "<!--more-->" }}
-      <p>{{ .Summary }}</p>
-        <a href="{{ .RelPermalink }}" class="post-read-more">Read More</a>
+      {{ .Summary }}
     {{ end }}
   </div>
 </article>
