@@ -1,6 +1,6 @@
 # HugoTeX
 
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.153.0-blue.svg)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.158.0-blue.svg)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/kaisugi/HugoTeX?style=social)](https://github.com/kaisugi/HugoTeX/stargazers)
 
@@ -37,7 +37,7 @@ Transform your Hugo site into a beautifully typeset document with the classic ae
 
 ### Prerequisites
 
-- Hugo >= **0.153.0** ([Download Hugo](https://gohugo.io/installation/))
+- Hugo >= **0.158.0** ([Download Hugo](https://gohugo.io/installation/))
 - Git
 
 ### Try It Out
