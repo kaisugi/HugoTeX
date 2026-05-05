@@ -6,8 +6,14 @@
 {{ else }}
   <title>{{ .Site.Title }}</title>
 {{ end }}
-{{ with .Site.Params.description }}
-  <meta name="description" content="{{ . }}" />
+{{ if .Params.description }}
+  <meta name="description" content="{{ .Params.description }}" />
+{{ else if and .IsPage (in .RawContent "<!--more-->") }}
+  <meta name="description" content="{{ .Summary | plainify }}" />
+{{ else if and .IsHome .Site.Params.Author.abstract }}
+  <meta name="description" content="{{ .Site.Params.Author.abstract | plainify }}" />
+{{ else if .Site.Params.description }}
+  <meta name="description" content="{{ .Site.Params.description }}" />
 {{ end }}
 {{- with .Site.Params.Author.Name }}
   <meta name="author" content="{{ . }}"/>

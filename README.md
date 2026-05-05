@@ -110,6 +110,7 @@ footnoteReturnLinkContents = "^"
   pagerSize = 10
 
 [Params]
+  description = "A short site description"
   darkmode = true  # Set to true to enforce dark mode
   # lightmode = true  # Set to true to enforce light mode
   [Params.Favicon]
@@ -184,6 +185,31 @@ convert /tmp/favicon-2048.png -alpha set -trim +repage -resize 48x48 -background
 convert /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png static/favicon.ico
 
 rm -f /tmp/favicon-2048.png /tmp/favicon-16.png /tmp/favicon-32.png /tmp/favicon-48.png
+```
+
+### Meta Descriptions
+
+HugoTeX renders a `<meta name="description">` tag in the document head
+when description content is available. Page front matter `description`
+has the highest priority; otherwise an article summary before
+`<!--more-->` is used as the description. On the home page,
+`Params.Author.abstract` is used as the description when no explicit
+page description exists. Finally, `Params.description` provides a site
+level fallback for all pages.
+
+```toml
+[Params]
+  description = "A short site description"
+```
+
+Use front matter `description` when a page needs a precise search or
+social preview description:
+
+```toml
++++
+title = "An article"
+description = "A concise description of the article."
++++
 ```
 
 ### Canonical URLs
