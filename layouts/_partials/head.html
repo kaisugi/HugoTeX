@@ -38,9 +38,15 @@
 <link rel="preload" href="/css/fonts/LM-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/css/fonts/LM-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/css/fonts/LM-bold-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ "css/latex.css" | relURL }}" />
-{{ if .Page.Store.Get "hasMath" }}
-<link rel="stylesheet" href="{{ "css/katex.min.css" | relURL }}" />
+{{ with resources.Get "css/latex.css" }}
+<link rel="stylesheet" href="{{ (. | minify).RelPermalink }}">
 {{ end }}
-<style>{{ readFile "static/css/main.css" | safeCSS }}</style>
+{{ if .Page.Store.Get "hasMath" }}
+{{ with resources.Get "css/katex.css" }}
+<link rel="stylesheet" href="{{ (. | minify).RelPermalink }}">
+{{ end }}
+{{ end }}
+{{ with resources.Get "css/main.css" }}
+<style>{{ (. | minify).Content | safeCSS }}</style>
+{{ end }}
 </head>
