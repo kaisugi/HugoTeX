@@ -42,5 +42,5 @@
 {{ if .Page.Store.Get "hasMath" }}
 <link rel="stylesheet" href="{{ "css/katex.min.css" | relURL }}" />
 {{ end }}
-<link rel="stylesheet" href="{{ "css/main.css" | relURL }}" />
+<style>{{ readFile "static/css/main.css" | safeCSS }}</style>
 </head>
