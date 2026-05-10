@@ -34,9 +34,19 @@
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-<link rel="stylesheet" href="{{ "css/latex.css" | relURL }}" />
-<link rel="stylesheet" href="{{ "css/main.css" | relURL }}" />
+<link rel="preload" href="/css/fonts/LM-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/css/fonts/LM-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/css/fonts/LM-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/css/fonts/LM-bold-italic.woff2" as="font" type="font/woff2" crossorigin>
+{{ with resources.Get "css/latex.css" }}
+<link rel="stylesheet" href="{{ (. | minify).RelPermalink }}">
+{{ end }}
 {{ if .Page.Store.Get "hasMath" }}
-<link rel="stylesheet" href="{{ "css/katex.min.css" | relURL }}" />
+{{ with resources.Get "css/katex.css" }}
+<link rel="stylesheet" href="{{ (. | minify).RelPermalink }}">
+{{ end }}
+{{ end }}
+{{ with resources.Get "css/main.css" }}
+<style>{{ (. | minify).Content | safeCSS }}</style>
 {{ end }}
 </head>
