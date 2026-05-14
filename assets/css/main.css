@@ -25,3 +25,25 @@ footer .theme-by {
   float: right;
   display: block;
 }
+
+.chroma-switch .highlight.chroma-dark {
+  display: none;
+}
+
+.latex-dark .chroma-switch .highlight.chroma-light {
+  display: none;
+}
+
+.latex-dark .chroma-switch .highlight.chroma-dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .latex-dark-auto .chroma-switch .highlight.chroma-light {
+    display: none;
+  }
+
+  .latex-dark-auto .chroma-switch .highlight.chroma-dark {
+    display: block;
+  }
+}

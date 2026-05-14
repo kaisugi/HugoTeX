@@ -298,6 +298,24 @@ Change the code highlighting theme in your config:
   style = "monokai"  # Try: github, dracula, nord, etc.
 ```
 
+To use different code highlighting styles for light and dark modes,
+keep the light style in Hugo's standard markup configuration and set
+only the dark style under theme parameters:
+
+```toml
+[markup.highlight]
+  style = "tango"
+
+[Params.SyntaxHighlighting]
+  DarkStyle = "paraiso-dark"
+```
+
+`LightStyle` is optional; when omitted, HugoTeX uses
+`markup.highlight.style` as the light style. Forced light mode renders
+only the light style, forced dark mode renders only the dark style, and
+automatic mode renders both variants while CSS follows
+`prefers-color-scheme`.
+
 Browse available styles: [Chroma Style Gallery](https://xyproto.github.io/splash/docs/)
 
 ### Custom CSS

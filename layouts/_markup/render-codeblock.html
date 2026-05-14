@@ -1,0 +1,39 @@
+{{- $syntaxHighlighting := site.Params.SyntaxHighlighting | default site.Params.syntaxHighlighting | default dict -}}
+{{- $lightStyleParam := $syntaxHighlighting.LightStyle | default $syntaxHighlighting.lightStyle -}}
+{{- $darkStyle := $syntaxHighlighting.DarkStyle | default $syntaxHighlighting.darkStyle -}}
+{{- $enabled := or $lightStyleParam $darkStyle -}}
+{{- if not $enabled -}}
+  {{- $result := transform.HighlightCodeBlock . -}}
+  {{- $result.Wrapped -}}
+{{- else if site.Params.darkmode -}}
+  {{- $style := $darkStyle | default $lightStyleParam -}}
+  {{- if $style -}}
+    {{- $result := transform.HighlightCodeBlock . (merge .Options (dict "style" $style)) -}}
+    {{- $result.Wrapped -}}
+  {{- else -}}
+    {{- $result := transform.HighlightCodeBlock . -}}
+    {{- $result.Wrapped -}}
+  {{- end -}}
+{{- else if site.Params.lightmode -}}
+  {{- $lightOptions := .Options -}}
+  {{- if $lightStyleParam -}}
+    {{- $lightOptions = merge $lightOptions (dict "style" $lightStyleParam) -}}
+  {{- end -}}
+  {{- $result := transform.HighlightCodeBlock . $lightOptions -}}
+  {{- $result.Wrapped -}}
+{{- else if $darkStyle -}}
+  {{- $lightOptions := merge .Options (dict "wrapperClass" "highlight chroma-light") -}}
+  {{- if $lightStyleParam -}}
+    {{- $lightOptions = merge $lightOptions (dict "style" $lightStyleParam) -}}
+  {{- end -}}
+  {{- $darkOptions := merge .Options (dict "style" $darkStyle "wrapperClass" "highlight chroma-dark") -}}
+  {{- $lightResult := transform.HighlightCodeBlock . $lightOptions -}}
+  {{- $darkResult := transform.HighlightCodeBlock . $darkOptions -}}
+  <div class="chroma-switch">
+    {{- $lightResult.Wrapped -}}
+    {{- $darkResult.Wrapped -}}
+  </div>
+{{- else -}}
+  {{- $result := transform.HighlightCodeBlock . (merge .Options (dict "style" $lightStyleParam)) -}}
+  {{- $result.Wrapped -}}
+{{- end -}}
