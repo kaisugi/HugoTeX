@@ -1,4 +1,4 @@
-baseURL = "https://hugotex.vercel.app/"
+baseURL = "/"
 title = "HugoTeX"
 languageCode = "en"
 DefaultContentLanguage = "en"

@@ -2,15 +2,13 @@
 
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.158.0-blue.svg)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/kaisugi/HugoTeX?style=social)](https://github.com/kaisugi/HugoTeX/stargazers)
+[![Stars](https://img.shields.io/github/stars/hugotex-dev/HugoTeX?style=social)](https://github.com/hugotex-dev/HugoTeX/stargazers)
 
 > A LaTeX-inspired Hugo theme for elegant technical writing and academic content
 
 Transform your Hugo site into a beautifully typeset document with the classic aesthetics of LaTeX. Perfect for researchers, mathematicians, and anyone who appreciates excellent typography.
 
 ![screenshot](https://user-images.githubusercontent.com/36184621/154785719-a9ef69da-7672-4e13-bf0d-5565cf0c99e2.png)
-
-**[Live Demo →](https://hugotex.vercel.app/)**
 
 ## ✨ Features
 
@@ -44,7 +42,7 @@ Transform your Hugo site into a beautifully typeset document with the classic ae
 
 ```bash
 # Clone the repository
-git clone https://github.com/kaisugi/HugoTeX
+git clone https://github.com/hugotex-dev/HugoTeX
 cd HugoTeX/exampleSite
 
 # Start the development server
@@ -60,7 +58,7 @@ hugo server -t ../..
 ```bash
 # Add the theme as a submodule to your Hugo site
 cd your-hugo-site
-git submodule add https://github.com/kaisugi/HugoTeX.git themes/HugoTeX
+git submodule add https://github.com/hugotex-dev/HugoTeX.git themes/HugoTeX
 
 # Update your config
 echo 'theme = "HugoTeX"' >> hugo.toml
@@ -76,7 +74,7 @@ hugo mod init github.com/yourusername/yoursite
 cat >> hugo.toml << EOF
 [module]
   [[module.imports]]
-    path = "github.com/kaisugi/HugoTeX"
+    path = "github.com/hugotex-dev/HugoTeX"
 EOF
 
 # Get the theme
@@ -88,7 +86,7 @@ hugo mod get
 ```bash
 # Clone directly into themes directory
 cd your-hugo-site/themes
-git clone https://github.com/kaisugi/HugoTeX.git
+git clone https://github.com/hugotex-dev/HugoTeX.git
 ```
 
 ## ⚙️ Configuration
@@ -358,6 +356,6 @@ Looking for alternatives? Check out:
 
 ---
 
-**Made with ❤️ by [Kaito Sugimoto](https://github.com/kaisugi)**
+**Made with ❤️ by the [HugoTeX team](https://github.com/hugotex-dev)**
 
 If you find HugoTeX useful, please consider giving it a ⭐ on GitHub!
