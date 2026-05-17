@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://hugotex.pages.dev/"
 title = "HugoTeX"
 languageCode = "en"
 DefaultContentLanguage = "en"
