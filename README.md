@@ -10,6 +10,8 @@ Transform your Hugo site into a beautifully typeset document with the classic ae
 
 ![screenshot](https://user-images.githubusercontent.com/36184621/154785719-a9ef69da-7672-4e13-bf0d-5565cf0c99e2.png)
 
+**[Live Demo →](https://hugotex.pages.dev/)**
+
 ## ✨ Features
 
 - 📐 **LaTeX-style Typography** - Classic, elegant document styling inspired by LaTeX
