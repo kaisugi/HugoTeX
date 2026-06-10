@@ -22,17 +22,22 @@
   {{- $result := transform.HighlightCodeBlock . $lightOptions -}}
   {{- $result.Wrapped -}}
 {{- else if $darkStyle -}}
-  {{- $lightOptions := merge .Options (dict "wrapperClass" "highlight chroma-light") -}}
-  {{- if $lightStyleParam -}}
-    {{- $lightOptions = merge $lightOptions (dict "style" $lightStyleParam) -}}
+  {{- if .Type -}}
+    {{- $lightOptions := merge .Options (dict "wrapperClass" "highlight chroma-light") -}}
+    {{- if $lightStyleParam -}}
+      {{- $lightOptions = merge $lightOptions (dict "style" $lightStyleParam) -}}
+    {{- end -}}
+    {{- $darkOptions := merge .Options (dict "style" $darkStyle "wrapperClass" "highlight chroma-dark") -}}
+    {{- $lightResult := transform.HighlightCodeBlock . $lightOptions -}}
+    {{- $darkResult := transform.HighlightCodeBlock . $darkOptions -}}
+    <div class="chroma-switch">
+      {{- $lightResult.Wrapped -}}
+      {{- $darkResult.Wrapped -}}
+    </div>
+  {{- else -}}
+    {{- $result := transform.HighlightCodeBlock . -}}
+    {{- $result.Wrapped -}}
   {{- end -}}
-  {{- $darkOptions := merge .Options (dict "style" $darkStyle "wrapperClass" "highlight chroma-dark") -}}
-  {{- $lightResult := transform.HighlightCodeBlock . $lightOptions -}}
-  {{- $darkResult := transform.HighlightCodeBlock . $darkOptions -}}
-  <div class="chroma-switch">
-    {{- $lightResult.Wrapped -}}
-    {{- $darkResult.Wrapped -}}
-  </div>
 {{- else -}}
   {{- $result := transform.HighlightCodeBlock . (merge .Options (dict "style" $lightStyleParam)) -}}
   {{- $result.Wrapped -}}
