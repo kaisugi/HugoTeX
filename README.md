@@ -361,3 +361,5 @@ Looking for alternatives? Check out:
 **Made with ❤️ by the [HugoTeX team](https://github.com/hugotex-dev)**
 
 If you find HugoTeX useful, please consider giving it a ⭐ on GitHub!
+
+<!-- preview-chain test: harmless no-op, will be reverted -->
