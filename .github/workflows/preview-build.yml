@@ -1,0 +1,46 @@
+name: Preview Build
+
+# Runs on every PR, including PRs from forks. This workflow has NO access to
+# secrets (permissions are read-only and no secrets are referenced), so it is
+# safe to run against untrusted fork code. It only builds the demo site and
+# uploads the result as an artifact, which the "Preview Deploy" workflow then
+# publishes from the trusted base-repo context.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  HUGO_VERSION: 0.158.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo (extended)
+        run: |
+          wget -q -O hugo.deb \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+
+      - name: Build exampleSite (root-relative URLs for preview)
+        run: |
+          hugo --source exampleSite --themesDir ../.. --theme HugoTeX \
+            --minify --baseURL "/" \
+            --destination "${GITHUB_WORKSPACE}/public"
+
+      - name: Record PR number for the deploy workflow
+        run: echo "${{ github.event.number }}" > pr-number
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-site
+          path: |
+            public
+            pr-number
+          retention-days: 3

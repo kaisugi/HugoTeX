@@ -1,0 +1,41 @@
+name: Production Deploy
+
+# Publishes the demo site to production (hugotex.pages.dev) on every push to
+# main. This replaces the previous Cloudflare native Git integration, which is
+# why production deploys now live in GitHub Actions too.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  HUGO_VERSION: 0.158.0
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Hugo (extended)
+        run: |
+          wget -q -O hugo.deb \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+
+      - name: Build exampleSite (production baseURL from hugo.toml)
+        run: |
+          hugo --source exampleSite --themesDir ../.. --theme HugoTeX \
+            --minify --destination "${GITHUB_WORKSPACE}/public"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy public
+            --project-name=hugotex
+            --branch=main
